@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .product {
+    display: flex;
+  }
+  .wrapper {
+    margin: 20px auto;
+  }
+  button {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  .active {
+    background-color: #a31d1d;
+  }
+</style>
+<body>
+  <div class="wrapper">
+    <div class="product">
+      <input type="text" />
+      <div id="val"></div>
+    </div>
+    <div class="product">
+      <input type="text" />
+      <div id="val"></div>
+    </div>
+    <div class="product">
+      <input type="text" />
+      <div id="val"></div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="item">
+      <input type="text" />
+      <button>Button</button>
+    </div>
+    <div class="item">
+      <input type="text" />
+      <button>Button</button>
+    </div>
+    <div class="item">
+      <input type="text" />
+      <button>Button</button>
+    </div>
+  </div>
+
+  <script>
+    // first wrapper
+    const products = document.getElementsByClassName('product');
+    const productArray = Array.from(products);
+    productArray.forEach(function(product) {
+      const inputField = product.firstElementChild;
+      inputField.value = '';
+      inputField.addEventListener('input', function(event) {
+        product.lastElementChild.textContent = inputField.value;
+      });
+    });
+
+    // second wrapper
+    const items = document.getElementsByClassName('item');
+    const itemArray = Array.from(items);
+    // TODO: add the .active class to respective buttons
+    // when the input is a number and number is greater than zero
+  </script>
+</body>
+</html>
